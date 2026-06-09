@@ -1,59 +1,49 @@
-# Dotfiles
+# Max's Dotfiles
 
-My config files for maintaining a consistent dev environment across machines.
+Personal macOS development setup for Cursor, Warp, zsh, Starship, Claude Code, and a small set of command-line tools.
 
-![screenshot](img/nvim-demo.png)
+## What This Manages
 
-## Essential Tools
+- **Editor**: Cursor user settings and extension list.
+- **Terminal**: Warp settings.
+- **Shell**: zsh with Starship, fzf, zoxide, eza, bat, fd, ripgrep, lazygit, and yazi.
+- **Prompt**: Starship using the Nord palette from the original repo.
+- **AI coding**: Claude Code user settings.
+- **Fonts**: Hack Nerd Font for terminal glyphs and Starship icons.
 
-- **Editor**: [NeoVim](https://neovim.io/), with a lightweight [Vim](https://www.vim.org/) fallback config (no dependencies) for maximum portability.
-- **Multiplexer**: [Tmux](https://github.com/tmux/tmux/wiki)
-- **Main Terminal**: [Ghostty](https://ghostty.org/) (Previously: [WezTerm](https://wezfurlong.org/wezterm/index.html))
-- **Shell Prompt**: [Starship](https://starship.rs/)
-- **Color Theme**: [Nord](https://www.nordtheme.com/docs/colors-and-palettes) across all tools, switchable via environment variables in `.zshenv`.
-- **Window Management**: [Rectangle](https://github.com/rxhanson/Rectangle) + [Karabiner-Elements](https://karabiner-elements.pqrs.org/) for keyboard-driven window resizing and app switching.
-- **File Manager**: [Yazi](https://yazi-rs.github.io/) (Previously: [Ranger](https://github.com/ranger/ranger))
-
-> [!NOTE]
-> This repo also includes configs for tools I no longer actively use (WezTerm, kitty, iTerm, VSCode, Ranger). I keep them around as reference and for easy reactivation — their symlinks and Brewfile entries are simply commented out.
-
-## Custom Window Management
-
-I find macOS window management extremely frustrating: Repeatedly pressing Cmd+Tab to switch apps or having to reach for the mouse to click and drag. It's painfully slow and breaks my flow. To streamline my workflow, I built a custom setup using [Karabiner-Elements](https://karabiner-elements.pqrs.org/) and [Rectangle](https://rectangleapp.com/). Together, they let me manage windows and switch apps with minimal mental overhead, at maxium speed, entirely from the keyboard. Here's how it works:
-
-The `Tab` key acts as a regular `Tab` when tapped, but when held it becomes a modifier (hyperkey) that unlocks two layers:
-
-- **Window layer** (`Tab + W + ...`): Resize and position windows via Rectangle. E.g. `Tab + W + H` for left half, `Tab + W + L` for right half.
-- **Expose layer** (`Tab + E + ...`): Jump directly to a specific app. E.g. `Tab + E + J` for browser, `Tab + E + K` for terminal.
-
-## Setup
-
-To set up these dotfiles on your system, run:
+## Install
 
 ```bash
 ./install.sh
 ```
 
-Then follow the on-screen prompts.
+The installer can:
 
-## Uninstalling
+- install Homebrew dependencies from `homebrew/Brewfile`
+- create `~/.hushlogin`
+- symlink files listed in `symlinks.conf`
 
-To remove all symlinks created by the installation script:
+## Cursor Extensions
+
+Cursor's CLI is not always installed by default. In Cursor, run:
+
+```text
+Shell Command: Install 'cursor' command in PATH
+```
+
+Then install the maintained extension set:
 
 ```bash
+./scripts/cursor-extensions.sh
+```
+
+## Symlinks
+
+Managed links are listed in `symlinks.conf`.
+
+```bash
+./scripts/symlinks.sh --create
 ./scripts/symlinks.sh --delete
 ```
 
-This only removes the symlinks, not the actual config files, so you can easily revert if needed.
-
-## Adding New Dotfiles and Software
-
-### Dotfiles
-
-1. Place the config file in the appropriate directory within this repo.
-2. Add a symlink entry in `symlinks.conf`.
-3. If needed, update `install.sh` to handle any additional setup.
-
-### Software Installation
-
-Software is managed via Homebrew. To add a formula or cask, update `homebrew/Brewfile` and run `./scripts/brew_install_custom.sh`. For pinning a specific version, find its Ruby script in the commit history of the official Homebrew GitHub repo and place it in `homebrew/custom-casks/` or `homebrew/custom-formulae/`.
+Use `--delete --include-files` only when intentionally replacing existing local config files.

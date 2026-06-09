@@ -1,0 +1,159 @@
+{
+  // ─── Editor ───────────────────────────────────────────────────────────────
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "Hack Nerd Font Mono",
+  "editor.fontSize": 15,
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": true,
+  "editor.cursorStyle": "block-outline",
+  "editor.accessibilitySupport": "on",
+  "editor.quickSuggestionsDelay": 0,
+  "editor.hover.delay": 0,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.pasteAs.preferences": [],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+  },
+
+  // ─── Language: Python ─────────────────────────────────────────────────────
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit",
+    },
+  },
+
+  // ─── Language: JavaScript / Web ──────────────────────────────────────────
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+
+  // ─── Language: Docker / YAML ──────────────────────────────────────────────
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+  },
+
+  // ─── Terminal ─────────────────────────────────────────────────────────────
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+  "terminal.integrated.inheritEnv": true,
+  "terminal.integrated.env.osx": {},
+  "terminal.external.osxExec": "",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "bash",
+      "args": ["-l"],
+      "icon": "terminal-bash",
+    },
+    "zsh": {
+      "path": "zsh",
+      "args": ["-l"],
+    },
+    "zsh (homebrew)": {
+      "path": "/opt/homebrew/bin/zsh",
+    },
+  },
+
+  // ─── Git ──────────────────────────────────────────────────────────────────
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+
+  // ─── Jupyter / Notebook ───────────────────────────────────────────────────
+  "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "jupyter.jupyterCommandLineArguments": [],
+  "jupyter.askForKernelRestart": false,
+
+  // ─── Workbench / UI ───────────────────────────────────────────────────────
+  "workbench.colorTheme": "One Dark Pro Night Flat",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "material-product-icons",
+  "window.autoDetectColorScheme": false,
+
+  // ─── Security ─────────────────────────────────────────────────────────────
+  // NOTE: workspace trust 已恢復預設值 true，保護不明來源專案
+  "security.workspace.trust.enabled": true,
+  "security.workspace.trust.untrustedFiles": "open",
+
+  // ─── Extensions ───────────────────────────────────────────────────────────
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+  "task.problemMatchers.neverPrompt": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "codesnap.containerPadding": "1em",
+  "redhat.telemetry.enabled": true,
+
+  // ─── Cursor ───────────────────────────────────────────────────────────────
+  "cursor.cmdk.useThemedDiffBackground": true,
+  "cursor.cpp.enablePartialAccepts": true,
+  "cursor.chat.showSuggestedFiles": true,
+  "cursor.terminal.usePreviewBox": true,
+  "cursor.diffs.useCharacterLevelDiffs": true,
+
+  // ─── Claude Code ──────────────────────────────────────────────────────────
+  "claudeCode.preferredLocation": "panel",
+
+  // ─── GitLens ──────────────────────────────────────────────────────────────
+  "gitlens.ai.model": "gitkraken",
+  "gitlens.ai.gitkraken.model": "gemini:gemini-2.0-flash",
+
+  // ─── Spell Check ──────────────────────────────────────────────────────────
+  "cSpell.userWords": [
+    "addmarker",
+    "aiplatform",
+    "audiorecorder",
+    "authuser",
+    "codelab",
+    "Codespaces",
+    "discoveryengine",
+    "documentai",
+    "dotenv",
+    "Elearning",
+    "googleapis",
+    "googlesolutiondaydemo",
+    "Infowindow",
+    "ipynb",
+    "langchain",
+    "levelname",
+    "newsgenaipoc",
+    "pydub",
+    "selectbox",
+    "ssml",
+    "streamlit",
+    "texttospeech",
+    "tobytes",
+    "vertexai",
+    "xkdcomtw",
+  ],
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/custom-dictionary-user.txt",
+      "addWords": true,
+      "scope": "user",
+    },
+  },
+}
